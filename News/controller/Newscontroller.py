@@ -7,7 +7,9 @@ from flask import request, render_template, flash, abort, url_for, redirect, ses
 
 @app.route('/News/adddata',methods=['GET'])
 def adddata():
-    return render_template("adddata.html")
+    if 'username' in session:
+        return render_template("adddata.html")
+    return 'You are not login.'
 
 
 @app.route('/News/add', methods=['POST'])
