@@ -5,12 +5,12 @@ from News.Business.NewsBusiness import NewBusiness
 from flask import request, render_template, flash, abort, url_for, redirect, session, Flask, g
 
 
-@app.route('/adddata',methods=['GET'])
+@app.route('/News/adddata',methods=['GET'])
 def adddata():
     return render_template("adddata.html")
 
 
-@app.route('/add', methods=['POST'])
+@app.route('/News/add', methods=['POST'])
 def add_entry():
     news = request.form['News']
     nm = NewsModel(news, 0)
